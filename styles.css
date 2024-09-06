@@ -1,0 +1,175 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.video-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+    background: url(https://example.com/your-fallback-image.jpg) no-repeat;
+    background-size: cover;
+}
+
+.social-icons {
+    position: absolute;
+    top: 10%; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2; /* Ensure above the video */
+    text-align: center;
+}
+
+.icon {
+    font-size: 2.5rem; /* Adjust size as needed */
+    color: white;
+    margin: 0 15px; /* Adjust spacing between icons */
+    transition: color 0.3s;
+}
+
+.icon:hover {
+    color: #ffcc00; /* Change color on hover */
+}
+
+.content {
+    position: relative;
+    z-index: 1; /* Ensure this is below the zombies */
+    text-align: center;
+    padding: 20px;
+    top: 25%;
+}
+
+h1 {
+    font-family: 'Creepster', cursive;
+    font-size: 9rem; /* Adjust size as needed */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Optional shadow for better readability */
+}
+
+.zombie-container {
+    position: absolute;
+    top: 70%; /* Starts from below the content area */
+    left: 0;
+    width: 100%;
+    height: 30%; /* Enough height for zombies to move */
+    overflow: hidden;
+    pointer-events: none; /* Ensures zombies don’t interfere with interactions */
+    z-index: 2; /* Ensure zombies are above the content */
+}
+
+.zombie {
+    position: absolute;
+    width: 100px; /* Adjust size as needed */
+    height: auto;
+    animation: walk 6s linear infinite; /* Faster animation */
+}
+
+.zombie:nth-child(1) {
+    top: 5%;
+    left: -100px; /* Start from the left */
+    animation-duration: 6s;
+}
+
+.zombie:nth-child(2) {
+    top: 20%;
+    left: 100%; /* Start from the right */
+    animation: walk-right 5s linear infinite;
+}
+
+.zombie:nth-child(3) {
+    top: 35%;
+    left: 50%; /* Start from the center */
+    transform: translateX(-50%);
+    animation-duration: 7s;
+}
+
+.zombie:nth-child(4) {
+    top: 50%;
+    left: -100px; /* Start from the left */
+    animation-duration: 6s;
+}
+
+.zombie:nth-child(5) {
+    top: 60%;
+    left: 100%; /* Start from the right */
+    animation: walk-right 4s linear infinite;
+}
+
+.zombie:nth-child(6) {
+    top: 75%;
+    left: 50%; /* Start from the center */
+    transform: translateX(-50%);
+    animation-duration: 5s;
+}
+
+.zombie:nth-child(7) {
+    top: 85%;
+    left: -100px; /* Start from the left */
+    animation-duration: 6s;
+}
+
+.zombie:nth-child(8) {
+    top: 10%;
+    left: 100%; /* Start from the right */
+    animation: walk-right 5s linear infinite;
+}
+
+.zombie:nth-child(9) {
+    top: 25%;
+    left: 50%; /* Start from the center */
+    transform: translateX(-50%);
+    animation-duration: 7s;
+}
+
+.zombie:nth-child(10) {
+    top: 40%;
+    left: -100px; /* Start from the left */
+    animation-duration: 6s;
+}
+
+.zombie:nth-child(11) {
+    top: 55%;
+    left: 100%; /* Start from the right */
+    animation: walk-right 4s linear infinite;
+}
+
+.zombie:nth-child(12) {
+    top: 70%;
+    left: 50%; /* Start from the center */
+    transform: translateX(-50%);
+    animation-duration: 5s;
+}
+
+@keyframes walk {
+    0% {
+        transform: translateX(-100px); /* Start off-screen on the left */
+    }
+    100% {
+        transform: translateX(calc(100% + 100px)); /* Move across the screen */
+    }
+}
+
+@keyframes walk-right {
+    0% {
+        transform: translateX(100px); /* Start off-screen on the right */
+    }
+    100% {
+        transform: translateX(calc(-100% - 100px)); /* Move across the screen */
+    }
+}
